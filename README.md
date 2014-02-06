@@ -6,9 +6,23 @@ Check if a file is executable using Node.js.
 
 Install with npm: `npm install executable`
 
+## Example
+
+```js
+var executable = require('executable');
+
+executable('bash', function (err, exec) {
+    console.log(exec);
+    // => true
+});
+
+executable.sync('bash')
+// => true
+```
+
 ## API
 
-### executable(name)
+### executable(name, cb)
 
 Find out if a file is executable. Returns `true` if it is.
 
