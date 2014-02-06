@@ -1,0 +1,30 @@
+{
+  "name": "executable",
+  "version": "0.1.0",
+  "description": "",
+  "keywords": [
+    "exec"
+  ],
+  "homepage": "https://github.com/kevva/executable",
+  "bugs": "https://github.com/kevva/executable/issues",
+  "author": {
+    "name": "Kevin Mårtensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "https://github.com/kevva"
+  },
+  "license": "MIT",
+  "repository": "git://github.com/kevva/executable.git",
+  "scripts": {
+    "test": "mocha --reporter list"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "mocha": "~1.17.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
