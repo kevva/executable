@@ -10,12 +10,10 @@ var fs = require('fs');
  */
 
 module.exports = function (name) {
-    var getGid = process.getgid();
-    var getUid = process.getuid();
     var file = fs.statSync(name);
     var mode = file.mode.toString(8);
 
-    if (file && file.isFile() && mode === '100755' && file.gid === getGid && file.uid === getUid) {
+    if (file && file.isFile() && mode === '100755') {
         return true;
     }
 
