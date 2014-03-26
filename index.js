@@ -15,7 +15,7 @@ function isExe(mode, gid, uid) {
     var ret;
 
     if (process.platform === 'win32') {
-        ret = mode.toString(8) === '100755';
+        ret = true;
     } else {
         ret = (mode & '0001') ||
               (mode & '0010') && process.getgid && gid === process.getgid() ||
