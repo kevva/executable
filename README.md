@@ -1,12 +1,14 @@
 # executable [![Build Status](https://travis-ci.org/kevva/executable.png?branch=master)](https://travis-ci.org/kevva/executable)
 
-Check if a file is executable using Node.js.
+> Check if a file is executable using Node.js.
 
 ## Getting started
 
-Install with npm: `npm install executable`
+```bash
+$ npm install --save executable
+```
 
-## Example
+## Usage
 
 ```js
 var executable = require('executable');
@@ -20,12 +22,6 @@ executable.sync('bash')
 // => true
 ```
 
-## API
-
-### executable(name, cb)
-
-Find out if a file is executable. Returns `true` if it is.
-
 ## License
 
-[MIT License](http://en.wikipedia.org/wiki/MIT_License) (c) [Kevin Mårtensson](https://github.com/kevva)
+[MIT License](http://en.wikipedia.org/wiki/MIT_License) © [Kevin Mårtensson](https://github.com/kevva)

@@ -2,29 +2,26 @@
   "name": "executable",
   "version": "0.1.1",
   "description": "Check if a file is executable",
-  "keywords": [
-    "exec"
-  ],
-  "homepage": "https://github.com/kevva/executable",
-  "bugs": "https://github.com/kevva/executable/issues",
+  "license": "MIT",
+  "repository": "kevva/executable",
   "author": {
     "name": "Kevin Mårtensson",
     "email": "kevinmartensson@gmail.com",
     "url": "https://github.com/kevva"
   },
-  "license": "MIT",
-  "repository": "git://github.com/kevva/executable.git",
+  "engines": {
+    "node": ">=0.10.0"
+  },
   "scripts": {
     "test": "mocha --reporter list"
   },
-  "main": "index.js",
   "files": [
     "index.js"
   ],
+  "keywords": [
+    "exec"
+  ],
   "devDependencies": {
-    "mocha": "~1.17.0"
-  },
-  "engines": {
-    "node": ">=0.10.0"
+    "mocha": "^1.18.2"
   }
 }
