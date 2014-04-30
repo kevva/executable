@@ -18,8 +18,22 @@ executable('bash', function (err, exec) {
     // => true
 });
 
-executable.sync('bash')
+executable.sync('bash');
 // => true
+```
+
+## CLI
+
+```bash
+$ npm install --global executable
+```
+
+```bash
+Usage
+  $ executable <file>
+
+Example
+  $ executable optipng
 ```
 
 ## License
