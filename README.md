@@ -1,8 +1,8 @@
 # executable [![Build Status](https://travis-ci.org/kevva/executable.svg?branch=master)](https://travis-ci.org/kevva/executable)
 
-> Check if a file is executable using Node.js.
+> Check if a file is executable using Node.js
 
-## Getting started
+## Install
 
 ```bash
 $ npm install --save executable
@@ -14,6 +14,10 @@ $ npm install --save executable
 var executable = require('executable');
 
 executable('bash', function (err, exec) {
+    if (err) {
+        throw err;
+    }
+    
     console.log(exec);
     // => true
 });
@@ -38,4 +42,4 @@ Example
 
 ## License
 
-[MIT License](http://en.wikipedia.org/wiki/MIT_License) © [Kevin Mårtensson](https://github.com/kevva)
+MIT © [Kevin Mårtensson](https://github.com/kevva)
