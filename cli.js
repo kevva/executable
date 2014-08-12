@@ -40,5 +40,13 @@ if (input.indexOf('-v') !== -1 || input.indexOf('--version') !== -1) {
 /**
  * Run
  */
- 
-console.log(executable.sync(input[0]));
+
+executable(input[0], function (err, exec) {
+    if (err) {
+        console.error(err);
+        process.exit(1);
+    }
+
+    console.log(exec ? 'Yes' : 'No');
+    process.exit(exec ? 0 : 1);
+});
