@@ -16,7 +16,7 @@
     "executable": "cli.js"
   },
   "scripts": {
-    "test": "mocha --reporter list"
+    "test": "node test/test.js"
   },
   "files": [
     "cli.js",
@@ -26,6 +26,6 @@
     "exec"
   ],
   "devDependencies": {
-    "mocha": "^1.18.2"
+    "ava": "0.0.3"
   }
 }

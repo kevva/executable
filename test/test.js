@@ -1,22 +1,19 @@
-/*global describe, it */
 'use strict';
 
-var assert = require('assert');
 var executable = require('../');
 var path = require('path');
+var test = require('ava');
 
-describe('executable()', function () {
-    it('should test executable and return true', function (cb) {
-        var file = path.join(__dirname, 'fixtures/optipng');
+test('test executable and return true', function (t) {
+    t.plan(2);
 
-        executable(file, function (err, exec) {
-            cb(assert.equal(exec, true));
-        });
+    executable(path.join(__dirname, 'fixtures/optipng'), function (err, exec) {
+        t.assert(!err);
+        t.assert(exec);
     });
+});
 
-    it('should test executable synchronously and return true', function (cb) {
-        var file = path.join(__dirname, 'fixtures/optipng');
-
-        cb(assert.equal(executable.sync(file), true));
-    });
+test('test executable synchronously and return true', function (t) {
+    t.plan(1);
+    t.assert(executable.sync(path.join(__dirname, 'fixtures/optipng')));
 });
