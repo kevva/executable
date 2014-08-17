@@ -36,14 +36,16 @@ function isExe(mode, gid, uid) {
 module.exports = function (name, cb) {
     fs.stat(name, function (err, stats) {
         if (err) {
-            return cb(err);
+            cb(err);
+            return;
         }
 
         if (stats && stats.isFile() && isExe(stats.mode, stats.gid, stats.gid)) {
-            return cb(null, true);
+            cb(null, true);
+            return;
         }
 
-        return cb(null, false);
+        cb(null, false);
     });
 };
 

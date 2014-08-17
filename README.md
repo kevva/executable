@@ -4,7 +4,7 @@
 
 ## Install
 
-```bash
+```sh
 $ npm install --save executable
 ```
 
@@ -28,11 +28,11 @@ executable.sync('bash');
 
 ## CLI
 
-```bash
+```sh
 $ npm install --global executable
 ```
 
-```bash
+```sh
 Usage
   $ executable <file>
 
