@@ -40,7 +40,7 @@ module.exports = function (name, cb) {
             return;
         }
 
-        if (stats && stats.isFile() && isExe(stats.mode, stats.gid, stats.gid)) {
+        if (stats && stats.isFile() && isExe(stats.mode, stats.gid, stats.uid)) {
             cb(null, true);
             return;
         }
