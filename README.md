@@ -1,4 +1,4 @@
-# executable [![Build Status](https://travis-ci.org/kevva/executable.svg?branch=master)](https://travis-ci.org/kevva/executable)
+# executable [![Build Status](http://img.shields.io/travis/kevva/executable.svg?style=flat)](https://travis-ci.org/kevva/executable)
 
 > Check if a file is executable using Node.js
 
