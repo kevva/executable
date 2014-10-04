@@ -14,12 +14,12 @@ $ npm install --save executable
 var executable = require('executable');
 
 executable('bash', function (err, exec) {
-    if (err) {
-        throw err;
-    }
-    
-    console.log(exec);
-    // => true
+	if (err) {
+		throw err;
+	}
+	
+	console.log(exec);
+	// => true
 });
 
 executable.sync('bash');

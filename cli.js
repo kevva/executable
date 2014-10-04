@@ -10,13 +10,13 @@ var pkg = require('./package.json');
  */
 
 function help() {
-    console.log(pkg.description);
-    console.log('');
-    console.log('Usage');
-    console.log('  $ executable <file>');
-    console.log('');
-    console.log('Example');
-    console.log('  $ executable optipng');
+	console.log(pkg.description);
+	console.log('');
+	console.log('Usage');
+	console.log('  $ executable <file>');
+	console.log('');
+	console.log('Example');
+	console.log('  $ executable optipng');
 }
 
 /**
@@ -24,8 +24,8 @@ function help() {
  */
 
 if (input.indexOf('-h') !== -1 || input.indexOf('--help') !== -1) {
-    help();
-    return;
+	help();
+	return;
 }
 
 /**
@@ -33,8 +33,8 @@ if (input.indexOf('-h') !== -1 || input.indexOf('--help') !== -1) {
  */
 
 if (input.indexOf('-v') !== -1 || input.indexOf('--version') !== -1) {
-    console.log(pkg.version);
-    return;
+	console.log(pkg.version);
+	return;
 }
 
 /**
@@ -42,11 +42,11 @@ if (input.indexOf('-v') !== -1 || input.indexOf('--version') !== -1) {
  */
 
 executable(input[0], function (err, exec) {
-    if (err) {
-        console.error(err);
-        process.exit(1);
-    }
+	if (err) {
+		console.error(err);
+		process.exit(1);
+	}
 
-    console.log(exec ? 'Yes' : 'No');
-    process.exit(exec ? 0 : 1);
+	console.log(exec ? 'Yes' : 'No');
+	process.exit(exec ? 0 : 1);
 });
