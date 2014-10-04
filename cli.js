@@ -10,13 +10,16 @@ var pkg = require('./package.json');
  */
 
 function help() {
-	console.log(pkg.description);
-	console.log('');
-	console.log('Usage');
-	console.log('  $ executable <file>');
-	console.log('');
-	console.log('Example');
-	console.log('  $ executable optipng');
+	console.log([
+		'',
+		'  ' + pkg.description,
+		'',
+		'  Usage',
+		'    executable <file>',
+		'',
+		'  Example',
+		'    executable optipng'
+	].join('\n'));
 }
 
 /**
@@ -47,6 +50,6 @@ executable(input[0], function (err, exec) {
 		process.exit(1);
 	}
 
-	console.log(exec ? 'Yes' : 'No');
+	console.log(exec ? 'true' : 'false');
 	process.exit(exec ? 0 : 1);
 });
