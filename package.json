@@ -27,5 +27,8 @@
   ],
   "devDependencies": {
     "ava": "^0.0.4"
+  },
+  "dependencies": {
+    "meow": "^2.0.0"
   }
 }

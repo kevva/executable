@@ -2,51 +2,44 @@
 'use strict';
 
 var executable = require('./');
-var input = process.argv.slice(2);
-var pkg = require('./package.json');
+var meow = require('meow');
 
 /**
- * Help screen
+ * Initialize CLI
  */
 
-function help() {
-	console.log([
+var cli = meow({
+	help: [
+		'Usage',
+		'  executable <file>',
 		'',
-		'  ' + pkg.description,
+		'Example',
+		'  executable optipng'
+	].join('\n')
+});
+
+/**
+ * Check for arguments
+ */
+
+if (!cli.input.length) {
+	console.error([
+		'Specify a filename',
 		'',
-		'  Usage',
-		'    executable <file>',
-		'',
-		'  Example',
-		'    executable optipng'
+		'Example',
+		'  executable optipng'
 	].join('\n'));
-}
 
-/**
- * Show help
- */
-
-if (input.indexOf('-h') !== -1 || input.indexOf('--help') !== -1) {
-	help();
-	return;
-}
-
-/**
- * Show package version
- */
-
-if (input.indexOf('-v') !== -1 || input.indexOf('--version') !== -1) {
-	console.log(pkg.version);
-	return;
+	process.exit(1);
 }
 
 /**
  * Run
  */
 
-executable(input[0], function (err, exec) {
+executable(cli.input[0], function (err, exec) {
 	if (err) {
-		console.error(err);
+		console.error(err.message);
 		process.exit(1);
 	}
 
