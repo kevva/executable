@@ -2,15 +2,6 @@
 
 var fs = require('fs');
 
-/**
- * Check if file is executable
- *
- * @param {String} mode
- * @param {String} gid
- * @param {String} uid
- * @api private
- */
-
 function isExe(mode, gid, uid) {
 	var ret;
 
@@ -24,14 +15,6 @@ function isExe(mode, gid, uid) {
 
 	return ret;
 }
-
-/**
- * Async
- *
- * @param {String} name
- * @param {Function} cb
- * @api public
- */
 
 module.exports = function (name, cb) {
 	fs.stat(name, function (err, stats) {
@@ -48,13 +31,6 @@ module.exports = function (name, cb) {
 		cb(null, false);
 	});
 };
-
-/**
- * Sync
- *
- * @param {String} name
- * @api public
- */
 
 module.exports.sync = function (name) {
 	var file = fs.statSync(name);

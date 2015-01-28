@@ -19,11 +19,11 @@ executable('bash', function (err, exec) {
 	}
 	
 	console.log(exec);
-	// => true
+	//=> true
 });
 
 executable.sync('bash');
-// => true
+//=> true
 ```
 
 ## CLI
