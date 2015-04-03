@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 'use strict';
 
-var executable = require('./');
 var meow = require('meow');
+var executable = require('./');
 
 var cli = meow({
 	help: [
@@ -15,13 +15,7 @@ var cli = meow({
 });
 
 if (!cli.input.length) {
-	console.error([
-		'Specify a filename',
-		'',
-		'Example',
-		'  $ executable optipng'
-	].join('\n'));
-
+	console.error('Filename required');
 	process.exit(1);
 }
 

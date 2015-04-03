@@ -1,8 +1,8 @@
 'use strict';
 
-var executable = require('../');
 var path = require('path');
 var test = require('ava');
+var executable = require('../');
 
 test('test executable and return true', function (t) {
 	t.plan(2);

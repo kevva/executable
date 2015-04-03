@@ -2,11 +2,13 @@
 
 > Check if a file is executable using Node.js
 
+
 ## Install
 
-```sh
+```
 $ npm install --save executable
 ```
+
 
 ## Usage
 
@@ -14,10 +16,6 @@ $ npm install --save executable
 var executable = require('executable');
 
 executable('bash', function (err, exec) {
-	if (err) {
-		throw err;
-	}
-	
 	console.log(exec);
 	//=> true
 });
@@ -26,19 +24,23 @@ executable.sync('bash');
 //=> true
 ```
 
+
 ## CLI
 
-```sh
+```
 $ npm install --global executable
 ```
 
-```sh
-Usage
-  $ executable <file>
-
-Example
-  $ executable optipng
 ```
+$ executable --help
+
+  Usage
+    $ executable <file>
+
+  Example
+    $ executable optipng
+```
+
 
 ## License
 
