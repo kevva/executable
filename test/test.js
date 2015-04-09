@@ -9,13 +9,14 @@ test('test executable and return true', function (t) {
 
 	executable(path.join(__dirname, 'fixtures/optipng'), function (err, exec) {
 		t.assert(!err, err);
-		t.assert(exec);
+		t.assert(exec, exec);
 	});
 });
 
 test('test executable synchronously and return true', function (t) {
 	t.plan(1);
-	t.assert(executable.sync(path.join(__dirname, 'fixtures/optipng')));
+	var bin = path.join(__dirname, 'fixtures/optipng');
+	t.assert(executable.sync(bin), executable.sync(bin));
 });
 
 test('test non-executable', function (t) {
@@ -23,6 +24,6 @@ test('test non-executable', function (t) {
 
 	executable(path.join(__dirname, '../readme.md'), function (err, exec) {
 		t.assert(!err, err);
-		t.assert(!exec);
+		t.assert(!exec, exec);
 	});
 });
