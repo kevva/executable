@@ -1,5 +1,4 @@
 'use strict';
-
 var fs = require('fs');
 
 function isExe(mode, gid, uid) {
