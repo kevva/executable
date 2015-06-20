@@ -11,7 +11,7 @@ var cli = meow({
 		'',
 		'Example',
 		'  $ executable optipng'
-	].join('\n')
+	]
 });
 
 if (!cli.input.length) {
