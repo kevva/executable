@@ -1,20 +1,15 @@
-'use strict';
-var path = require('path');
-var test = require('ava');
-var executable = require('../');
+import path from 'path';
+import test from 'ava';
+import fn from '../';
 
-test('test executable and return true', function (t) {
+test('test executable and return true', async t => {
 	t.plan(1);
-
-	executable(path.join(__dirname, 'fixtures/optipng')).then(function (exec) {
-		t.assert(exec, exec);
-	});
+	const exec = fn(path.join(__dirname, 'fixtures/optipng'));
+	t.ok(exec);
 });
 
-test('test non-executable', function (t) {
+test('test non-executable', async t => {
 	t.plan(1);
-
-	executable(path.join(__dirname, '../readme.md')).then(function (exec) {
-		t.assert(!exec, exec);
-	});
+	const exec = await fn(path.join(__dirname, '../readme.md'));
+	t.false(exec);
 });
