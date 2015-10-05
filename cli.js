@@ -3,15 +3,13 @@
 var meow = require('meow');
 var executable = require('./');
 
-var cli = meow({
-	help: [
-		'Usage',
-		'  $ executable <file>',
-		'',
-		'Example',
-		'  $ executable optipng'
-	]
-});
+var cli = meow([
+	'Usage',
+	'  $ executable <file>',
+	'',
+	'Example',
+	'  $ executable optipng'
+]);
 
 if (!cli.input.length) {
 	console.error('Filename required');
