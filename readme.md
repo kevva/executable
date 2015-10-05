@@ -13,15 +13,12 @@ $ npm install --save executable
 ## Usage
 
 ```js
-var executable = require('executable');
+const executable = require('executable');
 
-executable('bash', function (err, exec) {
+executable('bash').then(exec => {
 	console.log(exec);
 	//=> true
 });
-
-executable.sync('bash');
-//=> true
 ```
 
 

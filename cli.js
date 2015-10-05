@@ -18,12 +18,7 @@ if (!cli.input.length) {
 	process.exit(1);
 }
 
-executable(cli.input[0], function (err, exec) {
-	if (err) {
-		console.error(err.message);
-		process.exit(1);
-	}
-
-	console.log(exec ? 'true' : 'false');
+executable(cli.input[0]).then(function (exec) {
+	console.log(exec);
 	process.exit(exec ? 0 : 1);
 });
