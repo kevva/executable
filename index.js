@@ -26,3 +26,17 @@ module.exports = function (name) {
 		return false;
 	});
 };
+
+module.exports.sync = function (name) {
+	if (typeof name !== 'string') {
+		throw new Error('Expected a string');
+	}
+
+	var stats = fs.statSync(name);
+
+	if (stats && stats.isFile() && isExe(stats.mode, stats.gid, stats.uid)) {
+		return true;
+	}
+
+	return false;
+};

@@ -22,6 +22,17 @@ executable('bash').then(exec => {
 ```
 
 
+## API
+
+### executable(file)
+
+Returns a promise that resolves to a boolean of whether the file is executable.
+
+### executable.sync(file)
+
+Returns a boolean of whether the file is executable.
+
+
 ## CLI
 
 ```

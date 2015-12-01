@@ -8,6 +8,12 @@ test('test executable and return true', async t => {
 	t.ok(exec);
 });
 
+test('test executable synchronously and return true', t => {
+	t.plan(1);
+	t.ok(fn.sync(path.join(__dirname, 'fixtures/optipng')));
+	t.end();
+});
+
 test('test non-executable', async t => {
 	t.plan(1);
 	const exec = await fn(path.join(__dirname, '../readme.md'));
