@@ -31,11 +31,11 @@
     "pinkie-promise": "^1.0.0"
   },
   "devDependencies": {
-    "ava": "^0.2.0",
+    "ava": "*",
     "xo": "*"
   },
   "xo": {
-    "ignore": [
+    "ignores": [
       "test/test.js"
     ]
   }

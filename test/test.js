@@ -11,7 +11,6 @@ test('test executable and return true', async t => {
 test('test executable synchronously and return true', t => {
 	t.plan(1);
 	t.ok(fn.sync(path.join(__dirname, 'fixtures/optipng')));
-	t.end();
 });
 
 test('test non-executable', async t => {
