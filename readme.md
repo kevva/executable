@@ -1,6 +1,6 @@
 # executable [![Build Status](https://travis-ci.org/kevva/executable.svg?branch=master)](https://travis-ci.org/kevva/executable)
 
-> Check if a file is executable using Node.js
+> Check if a file is executable
 
 
 ## Install
