@@ -12,21 +12,16 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "bin": {
-    "executable": "cli.js"
-  },
   "scripts": {
     "test": "xo && ava"
   },
   "files": [
-    "cli.js",
     "index.js"
   ],
   "keywords": [
     "exec"
   ],
   "dependencies": {
-    "meow": "^3.3.0",
     "pify": "^2.2.0",
     "pinkie-promise": "^1.0.0"
   },

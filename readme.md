@@ -33,21 +33,9 @@ Returns a promise that resolves to a boolean of whether the file is executable.
 Returns a boolean of whether the file is executable.
 
 
-## CLI
+## Related
 
-```
-$ npm install --global executable
-```
-
-```
-$ executable --help
-
-  Usage
-    $ executable <file>
-
-  Example
-    $ executable optipng
-```
+* [executable-cli](https://github.com/kevva/executable-cli) - CLI for this module
 
 
 ## License
