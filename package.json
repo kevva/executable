@@ -19,7 +19,9 @@
     "index.js"
   ],
   "keywords": [
-    "exec"
+    "exec",
+    "executable",
+    "permission"
   ],
   "dependencies": {
     "pify": "^2.2.0",
@@ -28,10 +30,5 @@
   "devDependencies": {
     "ava": "*",
     "xo": "*"
-  },
-  "xo": {
-    "ignores": [
-      "test/test.js"
-    ]
   }
 }
