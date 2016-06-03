@@ -26,7 +26,7 @@ executable('bash').then(exec => {
 
 ### executable(file)
 
-Returns a promise that resolves to a boolean of whether the file is executable.
+Returns a Promise for a boolean.
 
 ### executable.sync(file)
 
