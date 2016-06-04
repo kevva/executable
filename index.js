@@ -7,9 +7,9 @@ const isExe = (mode, gid, uid) => {
 		return true;
 	}
 
-	return (mode & parseInt('0001', 8)) ||
+	return Boolean((mode & parseInt('0001', 8)) ||
 		(mode & parseInt('0010', 8)) && process.getgid && gid === process.getgid() ||
-		(mode & parseInt('0100', 8)) && process.getuid && uid === process.getuid();
+		(mode & parseInt('0100', 8)) && process.getuid && uid === process.getuid());
 };
 
 module.exports = name => {
@@ -17,13 +17,7 @@ module.exports = name => {
 		Promise.reject(new TypeError('Expected a string'));
 	}
 
-	return pify(fs.stat)(name).then(stats => {
-		if (stats && stats.isFile() && isExe(stats.mode, stats.gid, stats.uid)) {
-			return true;
-		}
-
-		return false;
-	});
+	return pify(fs.stat)(name).then(stats => stats && stats.isFile() && isExe(stats.mode, stats.gid, stats.uid));
 };
 
 module.exports.sync = name => {
@@ -33,9 +27,5 @@ module.exports.sync = name => {
 
 	const stats = fs.statSync(name);
 
-	if (stats && stats.isFile() && isExe(stats.mode, stats.gid, stats.uid)) {
-		return true;
-	}
-
-	return false;
+	return stats && stats.isFile() && isExe(stats.mode, stats.gid, stats.uid);
 };
