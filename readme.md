@@ -32,6 +32,12 @@ Returns a Promise for a boolean.
 
 Returns a boolean of whether the file is executable.
 
+#### file
+
+Type: `string`
+
+Path of the file.
+
 
 ## Related
 
