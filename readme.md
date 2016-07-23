@@ -38,6 +38,21 @@ Type: `string`
 
 Path of the file.
 
+### executable.checkMode(mode, [gid], [uid])
+
+Returns a boolean of whether the mode passed as first argument means that the file is executable.
+
+#### mode
+
+Type: `number`
+
+Property `mode` of `fs.Stats` instance returned by `fs.stat()` (or `fs.statSync()`) function.
+
+#### gid, uid
+
+Type: `number`
+
+Respectively the group identity and user identity of the file. If not set, permissions will be evaluated without considering owner or group of the file.
 
 ## Related
 
