@@ -6,10 +6,12 @@ const isExe = (mode, gid, uid) => {
 	if (process.platform === 'win32') {
 		return true;
 	}
+	const isGroup = gid ? process.getgid && gid === process.getgid() : true;
+	const isUser = uid ? process.getuid && uid === process.getuid() : true;
 
 	return Boolean((mode & parseInt('0001', 8)) ||
-		(mode & parseInt('0010', 8)) && process.getgid && gid === process.getgid() ||
-		(mode & parseInt('0100', 8)) && process.getuid && uid === process.getuid());
+		((mode & parseInt('0010', 8)) && isGroup) ||
+		((mode & parseInt('0100', 8)) && isUser));
 };
 
 module.exports = name => {
@@ -29,3 +31,5 @@ module.exports.sync = name => {
 
 	return stats && stats.isFile() && isExe(stats.mode, stats.gid, stats.uid);
 };
+
+module.exports.checkMode = isExe;
