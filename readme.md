@@ -38,7 +38,7 @@ Type: `string`
 
 Path of the file.
 
-### executable.checkMode(mode, gid, uid)
+### executable.checkMode(mode, [gid], [uid])
 
 Returns a boolean of whether the mode passed as first argument means that the file is executable.
 
@@ -46,7 +46,7 @@ Returns a boolean of whether the mode passed as first argument means that the fi
 
 Type: `number`
 
-Property `mode` of `fs.Stats` instance returned by `fs.stat()` (or `fs.statSync()``) function.
+Property `mode` of `fs.Stats` instance returned by `fs.stat()` (or `fs.statSync()`) function.
 
 #### gid, uid
 
