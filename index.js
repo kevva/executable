@@ -6,6 +6,8 @@ const isExe = (mode, gid, uid) => {
 	if (process.platform === 'win32') {
 		return true;
 	}
+	const isGroup = gid ? process.getgid && gid === process.getgid() : true;
+	const isUser = uid ? process.getuid && uid === process.getuid() : true;
 
 	const isGroup = gid ? process.getgid && gid === process.getgid() : true;
 	const isUser = uid ? process.getuid && uid === process.getuid() : true;
