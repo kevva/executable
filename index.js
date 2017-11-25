@@ -17,7 +17,7 @@ const isExe = (mode, gid, uid) => {
 
 module.exports = name => {
 	if (typeof name !== 'string') {
-		Promise.reject(new TypeError('Expected a string'));
+		return Promise.reject(new TypeError('Expected a string'));
 	}
 
 	return pify(fs.stat)(name).then(stats => stats && stats.isFile() && isExe(stats.mode, stats.gid, stats.uid));
