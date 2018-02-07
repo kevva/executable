@@ -10,9 +10,9 @@ const isExe = (mode, gid, uid) => {
 	const isGroup = gid ? process.getgid && gid === process.getgid() : true;
 	const isUser = uid ? process.getuid && uid === process.getuid() : true;
 
-	return Boolean((mode & parseInt('0001', 8)) ||
-		((mode & parseInt('0010', 8)) && isGroup) ||
-		((mode & parseInt('0100', 8)) && isUser));
+	return Boolean((mode & 0o0001) ||
+		((mode & 0o0010) && isGroup) ||
+		((mode & 0o0100) && isUser));
 };
 
 module.exports = name => {
@@ -25,7 +25,7 @@ module.exports = name => {
 
 module.exports.sync = name => {
 	if (typeof name !== 'string') {
-		throw new Error('Expected a string');
+		throw new TypeError('Expected a string');
 	}
 
 	const stats = fs.statSync(name);
