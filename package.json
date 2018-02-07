@@ -1,6 +1,6 @@
 {
   "name": "executable",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "Check if a file is executable",
   "license": "MIT",
   "repository": "kevva/executable",
