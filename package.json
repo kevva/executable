@@ -24,7 +24,7 @@
     "permission"
   ],
   "dependencies": {
-    "pify": "^2.2.0"
+    "pify": "^3.0.0"
   },
   "devDependencies": {
     "ava": "*",
