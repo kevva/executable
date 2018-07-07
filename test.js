@@ -1,6 +1,6 @@
 import path from 'path';
 import test from 'ava';
-import m from './';
+import m from '.';
 
 test('test executable and return true', async t => {
 	t.true(await m(path.join(__dirname, 'fixtures/optipng')));
